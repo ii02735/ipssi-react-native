@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View as Div, Button} from 'react-native';
-import { Title, Hr, Br } from "../UI/HtmlTags";
+import { Title, Hr, Br } from "../components/HtmlTags";
 
 
 export default function SecondScreen({ navigation, route }:any) {

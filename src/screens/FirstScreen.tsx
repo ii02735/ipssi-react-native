@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View as Div, Button} from 'react-native';
-import { Title, Hr, Br } from "../UI/HtmlTags";
+import { StyleSheet, Text, View as Div, Button, ActivityIndicator, Alert, Platform, Image} from 'react-native';
+import { Title, Hr, Br } from "../components/HtmlTags";
 
 
 export default function FirstScreen({navigation}:any) {
@@ -14,7 +14,13 @@ export default function FirstScreen({navigation}:any) {
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quaerat deserunt laudantium fugit corporis, iste aliquam explicabo debitis labore obcaecati a quo at totam asperiores. Necessitatibus pariatur est amet dolorem.
       </Text>
       <Br/>
-      <Button title="Second écran" onPress={() => navigation.navigate("Second",{ data: "Données aléatoires en props" })} />
+      <Div style={styles.column}>
+        <Button title="Second écran" onPress={() => navigation.navigate("Second",{ data: "Données aléatoires en props" })} />
+        <Button title="Hello world" onPress={() => Alert.alert("Hello world :)",`Vous lancez cette application sur l'OS suivant : ${Platform.OS+' '+Platform.Version}`)} />
+        <Button title="Liste" onPress={() => navigation.navigate("Liste")} />
+      </Div>
+
+      <Br/>
       <StatusBar style="auto" />
     </Div>
   );
@@ -26,4 +32,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 50
   },
+  column:
+  {
+    flexDirection: "column",
+    justifyContent: "space-around",
+    flex: 1
+  }
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactElement } from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 
 export function Title(props:any):JSX.Element
 {
@@ -11,7 +11,7 @@ export const Br = ():JSX.Element => <View style={{marginVertical: 10}}></View>
 
 export const Hr = ({margin}:{margin: string}):JSX.Element => <View style={{borderBottomWidth: 1, marginVertical: parseInt(margin)}}></View>
 
-const stylesTitle: any = {
+const stylesTitle: any = StyleSheet.create({
     h1: {
         fontSize: 40,
         fontWeight: "bold"
@@ -28,5 +28,5 @@ const stylesTitle: any = {
         fontSize: 15,
         fontWeight: "bold"
     }
-};
+});
 
